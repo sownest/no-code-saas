@@ -41,12 +41,7 @@ export default function Header() {
                                 >
                                     Summarize
                                 </Link>
-                                <Link
-                                    href="/my-notes"
-                                    className="nav-link relative text-gray-300 hover:text-white transition-colors"
-                                >
-                                    My Notes
-                                </Link>
+
                             </>
                         ) : (
                             <>
