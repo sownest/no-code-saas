@@ -8,11 +8,11 @@ const f = createUploadthing();
 // Define the file router for handling uploads
 export const ourFileRouter = {
     pdfUploader: f({ pdf: { maxFileSize: "32MB" } }) // Configure to accept PDF files up to 32MB
-        .middleware(async ({ req }) => {
+        .middleware(async () => {
             // Authenticate the user using Clerk
             const user = await currentUser();
             if (!user) throw new Error("Unauthorized"); // Throw an error if the user is not authenticated
-
+        
             // Return metadata for the upload
             return { userId: user.id };
         })

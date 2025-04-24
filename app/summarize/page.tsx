@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { saveAs } from 'file-saver';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/header';
+import { TextItem } from 'pdfjs-dist/types/src/display/api';
 
 const extractTextFromPDF = async (file: File): Promise<string> => {
     if (typeof window === 'undefined') {
@@ -19,7 +20,10 @@ const extractTextFromPDF = async (file: File): Promise<string> => {
     for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const content = await page.getTextContent();
-        text += content.items.map((item: any) => item.str).join(' ');
+        text += content.items
+            .filter((item): item is TextItem => 'str' in item)
+            .map((item: TextItem) => item.str)
+            .join(' ');
     }
     return text;
 };

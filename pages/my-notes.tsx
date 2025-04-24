@@ -12,7 +12,7 @@ export default function MyNotes() {
                         Feature Coming Soon
                     </h1>
                     <p className="text-gray-400 text-lg">
-                        We're working hard to bring this feature to you. Stay tuned!
+                        We&#39;re working hard to bring this feature to you. Stay tuned!
                     </p>
                 </div>
             </div>

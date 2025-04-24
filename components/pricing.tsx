@@ -20,7 +20,7 @@ export default function Pricing() {
                     className="text-gray-500 py-5 capitalize"
                     aria-label="Pricing Description"
                 >
-                    Choose the plan that's right for you. No hidden fees, no surprises.
+                    Choose the plan that&apos;s  right for you. No hidden fees, no surprises.
                 </p>
             </div>
 

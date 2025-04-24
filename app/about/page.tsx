@@ -123,11 +123,8 @@ export default function About() {
             {/* Footer Section */}
             <footer className="bg-black/20 py-6 mt-12 border-t border-white/10">
                 <div className="container mx-auto text-center text-gray-400">
-                    <p className="text-sm">
-                        © {new Date().getFullYear()} No-Code SaaS. All rights reserved.
-                    </p>
                     <p className="text-sm mt-2">
-                        Built with ❤️ by the No-Code SaaS team.
+                        Built with ❤️ by the Webloom team.
                     </p>
                 </div>
             </footer>

@@ -1,6 +1,6 @@
 'use client';
 
-import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
+import { SignedOut, useUser } from "@clerk/nextjs";
 import { SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
 import Pricing from "./pricing";
@@ -60,7 +60,7 @@ export default function Hero() {
                             className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors"
                             aria-label="Go to Summarize Page"
                         >
-                            Let's Summarize
+                            Let&#39;s Summarize
                         </Link>
                         <Link
                             href="/features"

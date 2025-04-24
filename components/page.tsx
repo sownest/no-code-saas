@@ -3,6 +3,7 @@
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import { SignUpButton } from "@clerk/nextjs";
+import Head from "next/head";
 
 export default function Home() {
     const { isSignedIn } = useUser();
@@ -10,7 +11,7 @@ export default function Home() {
     return (
         <>
             {/* SEO Meta Tags */}
-            <head>
+            <Head>
                 <title>WebLoom - Build Smarter, Faster, and Better</title>
                 <meta
                     name="description"
@@ -66,7 +67,7 @@ export default function Home() {
                         },
                     })}
                 </script>
-            </head>
+            </Head>
 
             {/* Page Content */}
             <div className="min-h-screen flex flex-col items-center justify-center text-center">
@@ -77,7 +78,7 @@ export default function Home() {
 
                 {/* Hero Description */}
                 <p className="text-lg text-gray-300 mb-8 max-w-2xl">
-                    Build smarter, faster, and better with AI-powered tools. Whether you're a student, professional, or entrepreneur, WebLoom has everything you need to succeed.
+                    Build smarter, faster, and better with AI-powered tools. Whether you&#39;re a student, professional, or entrepreneur, WebLoom has everything you need to succeed.
                 </p>
 
                 {/* Call-to-Action Buttons */}
@@ -107,7 +108,7 @@ export default function Home() {
                                 className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors"
                                 aria-label="Go to Build Page"
                             >
-                                Let's Build
+                                Let&#39;s Build
                             </Link>
                             <Link
                                 href="/features"

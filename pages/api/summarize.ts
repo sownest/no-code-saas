@@ -24,7 +24,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ error: 'Failed to process the request.' });
         }
 
-        const { text, userPlan } = fields as unknown as { text: string; userPlan: string | string[] };
+        const { text } = fields as unknown as { text: string };
+        const { userPlan } = fields as unknown as { userPlan: string | string[] };
 
         const uploadedFiles = Array.isArray(files.pdf) ? files.pdf : files.pdf ? [files.pdf] : [];
 
