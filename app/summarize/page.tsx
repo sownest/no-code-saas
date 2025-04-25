@@ -31,8 +31,7 @@ const extractTextFromPDF = async (file: File): Promise<string> => {
 
 export default function Summarize() {
   const [inputText, setInputText] = useState<string>('');
-  const [tone, setTone] = useState<string>('neutral');
-  const [length, setLength] = useState<string>('medium');
+  const [tone] = useState<string>('neutral');
   const [summary, setSummary] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);

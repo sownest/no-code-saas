@@ -4,7 +4,6 @@ import Head from 'next/head'; // Import the Head component for SEO
 import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
-import Script from 'next/script'; // Import Next.js Script component
 
 export default function Home() {
   return (
