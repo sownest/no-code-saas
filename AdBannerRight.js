@@ -3,29 +3,30 @@ import { useEffect } from 'react';
 
 const AdBannerRight = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.innerHTML = `
+    const setupScript = document.createElement('script');
+    setupScript.type = 'text/javascript';
+    setupScript.innerHTML = `
       atOptions = {
-        'key' : '98446bbcee889028dfaec65a250dc039',
+        'key' : 'c554d3bda3b686090d0d4efbcb55552b',
         'format' : 'iframe',
         'height' : 600,
         'width' : 160,
         'params' : {}
       };
     `;
+
     const srcScript = document.createElement('script');
     srcScript.type = 'text/javascript';
-    srcScript.src = '//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js';
+    srcScript.src = '//www.highperformanceformat.com/c554d3bda3b686090d0d4efbcb55552b/invoke.js';
 
-    const adContainer = document.getElementById('ad-right');
-    if (adContainer) {
-      adContainer.appendChild(script);
-      adContainer.appendChild(srcScript);
+    const container = document.getElementById('ad-right');
+    if (container) {
+      container.appendChild(setupScript);
+      container.appendChild(srcScript);
     }
 
     return () => {
-      if (adContainer) adContainer.innerHTML = '';
+      if (container) container.innerHTML = '';
     };
   }, []);
 
