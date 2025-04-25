@@ -1,11 +1,11 @@
 'use client';
-
+import Script from 'next/script';
 import { useState } from 'react';
 import { saveAs } from 'file-saver';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/header';
 import { TextItem } from 'pdfjs-dist/types/src/display/api';
-
+import AdBanner from 'AdBanner';
 const extractTextFromPDF = async (file: File): Promise<string> => {
     if (typeof window === 'undefined') {
         throw new Error('PDF extraction can only be performed on the client side.');
@@ -34,8 +34,7 @@ export default function Summarize() {
     const [length, setLength] = useState<string>('medium');
     const [summary, setSummary] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
-    const [, setError] = useState<string | null>(null);
-
+    const [error, setError] = useState<string | null>(null);
     const [isPDFMode, setIsPDFMode] = useState<boolean>(false);
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
     const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -309,20 +308,8 @@ export default function Summarize() {
                     </motion.div>
                 )}
             </div>
-
-            {/* Advertisement */}
-            <div className="mt-12">
-                <script type="text/javascript">
-                    atOptions = {
-                        key: '98446bbcee889028dfaec65a250dc039',
-                        format: 'iframe',
-                        height: 600,
-                        width: 160,
-                        params: {}
-                    };
-                </script>
-                <script type="text/javascript" src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"></script>
-            </div>
+            <AdBanner />
         </main>
+        
     );
 }

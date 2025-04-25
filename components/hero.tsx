@@ -4,7 +4,7 @@ import { SignedOut, useUser } from "@clerk/nextjs";
 import { SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
 import Pricing from "./pricing";
-
+import AdBanner from 'AdBanner';
 export default function Hero() {
     const { isSignedIn } = useUser();
 
@@ -79,6 +79,7 @@ export default function Hero() {
                     <Pricing />
                 </div>
             </SignedOut>
+            <AdBanner />
         </section>
     );
 }

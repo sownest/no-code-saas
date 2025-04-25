@@ -74,26 +74,6 @@ export default function Home() {
         </script>
       </Head>
 
-      {/* Ad Script (External JS) */}
-      <Script
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            atOptions = {
-              'key' : '98446bbcee889028dfaec65a250dc039',
-              'format' : 'iframe',
-              'height' : 600,
-              'width' : 160,
-              'params' : {}
-            };
-          `,
-        }}
-      />
-      <Script
-        src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"
-        strategy="afterInteractive"
-      />
-
       {/* Page Content */}
       <Header />
       <Hero />
