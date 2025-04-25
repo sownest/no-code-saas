@@ -34,8 +34,7 @@ export default function Summarize() {
     const [length, setLength] = useState<string>('medium');
     const [summary, setSummary] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
-    // Line 37
-    const [,setError] = useState<string | null>(null);
+    const [, setError] = useState<string | null>(null);
 
     const [isPDFMode, setIsPDFMode] = useState<boolean>(false);
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
@@ -64,18 +63,15 @@ export default function Summarize() {
             let response;
 
             if (isPDFMode) {
-                // Extract text from PDFs on the client side
                 const pdfTexts = await Promise.all(uploadedFiles.map(extractTextFromPDF));
                 const combinedText = pdfTexts.join('\n\n');
 
-                // Send extracted text to the backend
                 response = await fetch('/api/summarize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ text: combinedText, tone, length }),
                 });
             } else {
-                // Handle text input mode
                 response = await fetch('/api/summarize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -107,7 +103,6 @@ export default function Summarize() {
             }
             setUploadedFiles(validFiles);
 
-            // Extract text from PDFs for preview
             const pdfTexts = await Promise.all(validFiles.map(extractTextFromPDF));
             setInputText(pdfTexts.join('\n\n'));
         }
@@ -143,7 +138,6 @@ export default function Summarize() {
     return (
         <main className="min-h-screen bg-gradient-to-b from-black/20 to-purple-900/10">
             <Header />
-
             <div className="container mx-auto max-w-4xl pt-24 px-4">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-purple-300 text-transparent bg-clip-text">
@@ -154,13 +148,14 @@ export default function Summarize() {
                     </p>
                 </div>
 
+                {/* PDF Mode or Text Mode Buttons */}
                 <div className="flex justify-center mb-8">
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => {
                             setIsPDFMode(false);
-                            setShowMaintenanceMessage(false); // Remove message when switching to text mode
+                            setShowMaintenanceMessage(false);
                         }}
                         className={`px-6 py-3 rounded-l-lg ${!isPDFMode ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
                     >
@@ -171,7 +166,7 @@ export default function Summarize() {
                         whileTap={{ scale: 0.95 }}
                         onClick={() => {
                             setIsPDFMode(true);
-                            setShowMaintenanceMessage(true); // Show message when switching to PDF mode
+                            setShowMaintenanceMessage(true);
                         }}
                         className={`px-6 py-3 rounded-r-lg ${isPDFMode ? 'bg-purple-600 text-white' : 'bg-gray-300 text-gray-700'}`}
                     >
@@ -179,6 +174,7 @@ export default function Summarize() {
                     </motion.button>
                 </div>
 
+                {/* Maintenance Message */}
                 <AnimatePresence>
                     {showMaintenanceMessage && (
                         <motion.div
@@ -192,6 +188,7 @@ export default function Summarize() {
                     )}
                 </AnimatePresence>
 
+                {/* Text Area or PDF Upload Area */}
                 <AnimatePresence mode="wait">
                     {!isPDFMode ? (
                         <motion.div
@@ -225,9 +222,7 @@ export default function Summarize() {
                                 onDragLeave={handleDragLeave}
                                 onDrop={handleDrop}
                             >
-                                <p className="text-gray-400 mb-4">
-                                    Drag and drop your PDFs here, or click to upload.
-                                </p>
+                                <p className="text-gray-400 mb-4">Drag and drop your PDFs here, or click to upload.</p>
                                 <label
                                     htmlFor="file-upload"
                                     className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition-colors"
@@ -243,99 +238,90 @@ export default function Summarize() {
                                     onChange={handleFileUpload}
                                 />
                                 <div className="mt-4 text-gray-400">
-                                    {uploadedFiles.length > 0
-                                        ? `${uploadedFiles.length} file(s) uploaded`
-                                        : 'No files uploaded yet.'}
+                                    {uploadedFiles.length > 0 ? `${uploadedFiles.length} file(s) uploaded.` : 'No files uploaded.'}
                                 </div>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
 
-                <div className="flex flex-col md:flex-row gap-4 mb-8">
-                    <div className="flex-1">
-                        <label className="block text-gray-300 mb-2">Tone</label>
-                        <select
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600"
-                            value={tone}
-                            onChange={(e) => setTone(e.target.value)}
-                        >
-                            <option value="neutral">Neutral</option>
-                            <option value="formal">Formal</option>
-                            <option value="informal">Informal</option>
-                            <option value="creative">Creative</option>
-                        </select>
-                    </div>
-                    <div className="flex-1">
-                        <label className="block text-gray-300 mb-2">Length</label>
-                        <select
-                            className="w-full p-3 rounded-lg bg-gray-800 text-white border border-gray-600"
-                            value={length}
-                            onChange={(e) => setLength(e.target.value)}
-                        >
-                            <option value="short">Short</option>
-                            <option value="medium">Medium</option>
-                            <option value="long">Long</option>
-                        </select>
-                    </div>
-                </div>
+                {/* Generate Summary Button */}
+                <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handleGenerateSummary}
+                    disabled={loading}
+                    className="w-full mt-8 bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg disabled:bg-gray-400"
+                >
+                    {loading ? 'Generating...' : 'Generate Summary'}
+                </motion.button>
 
-                <div className="text-center mb-8">
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={handleGenerateSummary}
-                        className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-lg transition-colors w-full"
-                        disabled={loading}
+                {/* Error Message */}
+                {error && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="mt-4 text-red-600 text-center"
                     >
-                        {loading ? 'Generating...' : 'Generate Summary'}
-                    </motion.button>
-                </div>
+                        {error}
+                    </motion.div>
+                )}
 
+                {/* Summary Section */}
                 {summary && (
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="bg-black/20 border border-white/10 rounded-lg p-6 shadow-lg"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="mt-12 p-6 bg-gray-900 rounded-lg"
                     >
-                        <h3 className="text-xl font-semibold text-white mb-4">Your Summary</h3>
-                        <p className="text-gray-300 mb-4 whitespace-pre-wrap">{summary}</p>
-                        <div className="flex flex-wrap gap-4">
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={() => handleDownload('pdf')}
-                                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
-                            >
-                                Download as PDF
-                            </motion.button>
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                onClick={() => handleDownload('docx')}
-                                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
-                            >
-                                Download as DOCX
-                            </motion.button>
+                        <h2 className="text-2xl font-bold text-white mb-4">Your Summary:</h2>
+                        <p className="text-gray-300">{summary}</p>
+
+                        {/* Download and Copy Options */}
+                        <div className="mt-4 flex space-x-4 justify-center">
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => handleDownload('txt')}
-                                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"
                             >
-                                Download as TXT
+                                Download TXT
+                            </motion.button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={() => handleDownload('pdf')}
+                                className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg"
+                            >
+                                Download PDF
                             </motion.button>
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={handleCopyToClipboard}
-                                className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
+                                className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg"
                             >
                                 Copy to Clipboard
                             </motion.button>
                         </div>
                     </motion.div>
                 )}
+            </div>
+
+            {/* Advertisement */}
+            <div className="mt-12">
+                <script type="text/javascript">
+                    atOptions = {
+                        key: '98446bbcee889028dfaec65a250dc039',
+                        format: 'iframe',
+                        height: 600,
+                        width: 160,
+                        params: {}
+                    };
+                </script>
+                <script type="text/javascript" src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"></script>
             </div>
         </main>
     );
