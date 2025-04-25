@@ -1,7 +1,8 @@
-// components/AdBanner.js
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const AdBanner = () => {
+  const adRef = useRef(null);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
@@ -14,20 +15,26 @@ const AdBanner = () => {
         'params' : {}
       };
     `;
-    document.body.appendChild(script);
+    adRef.current?.appendChild(script);
 
     const srcScript = document.createElement('script');
     srcScript.type = 'text/javascript';
     srcScript.src = '//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js';
-    document.body.appendChild(srcScript);
+    adRef.current?.appendChild(srcScript);
 
     return () => {
-      document.body.removeChild(script);
-      document.body.removeChild(srcScript);
+      if (adRef.current) {
+        adRef.current.innerHTML = '';
+      }
     };
   }, []);
 
-  return null; // You can also return a placeholder div if needed
+  return (
+    <div
+      ref={adRef}
+      className="w-[160px] h-[600px] bg-gray-900 rounded-xl overflow-hidden"
+    />
+  );
 };
 
 export default AdBanner;

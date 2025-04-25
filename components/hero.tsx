@@ -10,15 +10,15 @@ export default function Hero() {
     const { isSignedIn } = useUser();
 
     return (
-        <section className="min-h-screen flex items-center justify-center px-4 pt-24">
-            <div className="flex flex-row w-full max-w-7xl gap-4 items-start">
+        <section className="min-h-screen pt-24 px-4 flex justify-center">
+            <div className="flex flex-row max-w-screen-xl w-full items-start gap-6">
 
                 {/* Left Ad Banner */}
-                <div className="hidden lg:block w-1/6">
+                <div className="hidden lg:flex w-[180px]">
                     <AdBanner />
                 </div>
 
-                {/* Hero Content */}
+                {/* Hero Main Content */}
                 <div className="flex-1 flex flex-col items-center text-center">
                     <h1 id="hero-heading" className="text-6xl font-bold mb-6">
                         Transform Your Notes
@@ -71,7 +71,7 @@ export default function Hero() {
                 </div>
 
                 {/* Right Ad Banner */}
-                <div className="hidden lg:block w-1/6">
+                <div className="hidden lg:flex w-[180px]">
                     <AdBanner />
                 </div>
 
