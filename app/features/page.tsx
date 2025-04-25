@@ -67,7 +67,7 @@ export default function Features() {
                     content="Explore the powerful features of WebLoom, including AI-powered summarization, export options, a user-friendly interface, and top-notch security."
                 />
                 <meta name="twitter:image" content="https://yourdomain.com/twitter-features-image.png" />
-                <meta name="twitter:site" content="@YourTwitterHandle" />
+                <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://yourdomain.com/features" />

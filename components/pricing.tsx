@@ -39,43 +39,15 @@ export default function Pricing() {
                             id="basic-plan-heading"
                             className="text-2xl font-bold text-white mb-4"
                         >
-                            Basic Plan
+                            Free Plan
                         </h3>
                         <p className="text-gray-300">
-                            Perfect for individuals starting out with basic features.
+                            completely free to use. No credit card required.
                         </p>
-                        <Button
-                            className="mt-4 bg-white/10 hover:bg-white/20"
-                            aria-label="Get Started with Basic Plan"
-                        >
-                            Get Started
-                        </Button>
+
                     </div>
                 </div>
 
-                {/* Pro Plan */}
-                <div
-                    className="relative w-1/3"
-                    aria-labelledby="pro-plan-heading"
-                >
-                    <div className="p-8 bg-black/20 backdrop-blur-sm rounded-lg border border-white/20">
-                        <h3
-                            id="pro-plan-heading"
-                            className="text-2xl font-bold text-white mb-4"
-                        >
-                            Pro Plan
-                        </h3>
-                        <p className="text-gray-300">
-                            Advanced features for professionals and teams.
-                        </p>
-                        <Button
-                            className="mt-4 bg-white/10 hover:bg-white/20"
-                            aria-label="Get Started with Pro Plan"
-                        >
-                            Get Started
-                        </Button>
-                    </div>
-                </div>
             </div>
         </section>
     );

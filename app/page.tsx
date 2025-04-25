@@ -41,7 +41,7 @@ export default function Home() {
           content="WebLoom is a cutting-edge platform for creating, sharing, and managing web designs with powerful AI tools. Boost your productivity today!"
         />
         <meta name="twitter:image" content="https://yourdomain.com/twitter-home-image.png" />
-        <meta name="twitter:site" content="@YourTwitterHandle" />
+        <meta name="twitter:site" content="@shray_sagar" />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://yourdomain.com" />

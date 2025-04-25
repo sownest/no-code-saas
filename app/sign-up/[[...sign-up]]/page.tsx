@@ -39,7 +39,7 @@ export default function Page() {
                     content="Sign up for WebLoom to access powerful AI tools and boost your productivity. Join today and start transforming your workflow."
                 />
                 <meta name="twitter:image" content="https://yourdomain.com/twitter-sign-up-image.png" />
-                <meta name="twitter:site" content="@YourTwitterHandle" />
+                <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://yourdomain.com/sign-up" />

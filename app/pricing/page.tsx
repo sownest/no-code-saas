@@ -7,29 +7,16 @@ import { motion } from 'framer-motion';
 export default function Pricing() {
     const pricingPlans = [
         {
-            title: 'Basic Plan',
-            price: '$2.99/month',
+            title: 'Free plan',
+            price: '$0/month',
             features: [
-                '10 Summaries per Month',
+                'Unlimited Summaries per Month',
                 'Export to Text',
-                'Basic AI Summarization',
+                'Advance AI Summarization',
             ],
             buttonText: 'Get Started',
             buttonStyle: 'bg-gray-600 hover:bg-gray-700',
             icon: '🌟',
-        },
-        {
-            title: 'Pro Plan',
-            price: '$9.99/month',
-            features: [
-                'Unlimited Summaries',
-                'Export to PDF & DOCX',
-                'Advanced AI Summarization',
-                'Priority Support',
-            ],
-            buttonText: 'Upgrade Now',
-            buttonStyle: 'bg-purple-600 hover:bg-purple-700',
-            icon: '🚀',
         },
     ];
 
@@ -68,7 +55,7 @@ export default function Pricing() {
                     content="Explore WebLoom's affordable pricing plans. Choose between the Basic Plan and Pro Plan to unlock powerful AI tools and boost your productivity."
                 />
                 <meta name="twitter:image" content="https://yourdomain.com/twitter-pricing-image.png" />
-                <meta name="twitter:site" content="@YourTwitterHandle" />
+                <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://yourdomain.com/pricing" />

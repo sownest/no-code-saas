@@ -18,7 +18,7 @@ export default function About() {
                     name="keywords"
                     content="about us, no-code, SaaS, AI tools, innovation, productivity, mission, vision, team"
                 />
-                <meta name="author" content="Your Company Name" />
+                <meta name="author" content="Webloom" />
 
                 {/* Open Graph (OG) Tags for Social Media */}
                 <meta property="og:title" content="About Us - Empowering Innovation | No-Code SaaS" />
@@ -39,7 +39,7 @@ export default function About() {
                     content="Learn about our mission, vision, and the passionate team behind No-Code SaaS. Discover how we empower individuals and businesses with cutting-edge AI-powered tools."
                 />
                 <meta name="twitter:image" content="https://yourdomain.com/twitter-about-image.png" />
-                <meta name="twitter:site" content="@YourTwitterHandle" />
+                <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://yourdomain.com/about" />

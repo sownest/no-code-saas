@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "WebLoom - Empowering Web Design and Productivity",
     description:
       "WebLoom is a cutting-edge platform for creating, sharing, and managing web designs with powerful AI tools.",
-    site: "@YourTwitterHandle",
+    site: "@shray_sagar",
     images: ["https://yourdomain.com/twitter-image.png"],
   },
 };
