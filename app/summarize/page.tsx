@@ -34,7 +34,9 @@ export default function Summarize() {
     const [length, setLength] = useState<string>('medium');
     const [summary, setSummary] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
-    const [error, setError] = useState<string | null>(null);
+    // Line 37
+    const [,setError] = useState<string | null>(null);
+
     const [isPDFMode, setIsPDFMode] = useState<boolean>(false);
     const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
     const [isDragging, setIsDragging] = useState<boolean>(false);
