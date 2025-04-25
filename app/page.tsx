@@ -72,6 +72,16 @@ export default function Home() {
           })}
         </script>
       </Head>
+      <script type="text/javascript">
+	atOptions = {
+		'key' : '98446bbcee889028dfaec65a250dc039',
+		'format' : 'iframe',
+		'height' : 600,
+		'width' : 160,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"></script>
 
       {/* Page Content */}
       <Header />
