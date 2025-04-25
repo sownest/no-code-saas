@@ -1,12 +1,11 @@
-import { useEffect, useRef } from 'react';
+'use client';
+import { useEffect } from 'react';
 
 const AdBanner = () => {
-  const adRef = useRef(null);
-
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.innerHTML = `
+    const leftScript = document.createElement('script');
+    leftScript.type = 'text/javascript';
+    leftScript.innerHTML = `
       atOptions = {
         'key' : '98446bbcee889028dfaec65a250dc039',
         'format' : 'iframe',
@@ -15,25 +14,27 @@ const AdBanner = () => {
         'params' : {}
       };
     `;
-    adRef.current?.appendChild(script);
+    const leftSrc = document.createElement('script');
+    leftSrc.type = 'text/javascript';
+    leftSrc.src = '//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js';
 
-    const srcScript = document.createElement('script');
-    srcScript.type = 'text/javascript';
-    srcScript.src = '//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js';
-    adRef.current?.appendChild(srcScript);
+    const leftContainer = document.getElementById('ad-left');
+    if (leftContainer) {
+      leftContainer.appendChild(leftScript);
+      leftContainer.appendChild(leftSrc);
+    }
 
     return () => {
-      if (adRef.current) {
-        adRef.current.innerHTML = '';
+      if (leftContainer) {
+        leftContainer.innerHTML = '';
       }
     };
   }, []);
 
   return (
-    <div
-      ref={adRef}
-      className="w-[160px] h-[600px] bg-gray-900 rounded-xl overflow-hidden"
-    />
+    <div className="hidden lg:flex absolute top-40 left-4 z-10">
+      <div id="ad-left" />
+    </div>
   );
 };
 
