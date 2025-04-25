@@ -81,11 +81,15 @@ export default function Hero() {
 
         {/* Pricing + Horizontal Ad for Signed Out Users */}
         <SignedOut>
-          <div className="mt-16">
+        <div className="relative w-full">
+            <AdBanner />
+            <AdBannerRight />
+            <div className="mt-12">
             <Pricing />
-            <HorizontalAdBanner />
-          </div>
+            </div>
+        </div>
         </SignedOut>
+
       </div>
     </section>
   );
