@@ -5,6 +5,8 @@ import { SignUpButton } from "@clerk/nextjs";
 import Link from "next/link";
 import Pricing from "./pricing";
 import AdBanner from 'AdBanner';
+import HorizontalAdBanner from 'HorizontalAdBanner';
+
 
 export default function Hero() {
     const { isSignedIn } = useUser();
@@ -66,7 +68,10 @@ export default function Hero() {
                     </div>
 
                     <SignedOut>
-                        <Pricing />
+                        <div className="mt-12">
+                            <Pricing />
+                            <HorizontalAdBanner />
+                        </div>
                     </SignedOut>
                 </div>
 
