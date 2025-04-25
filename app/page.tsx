@@ -4,6 +4,7 @@ import Head from 'next/head'; // Import the Head component for SEO
 import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Footer from '@/components/footer';
+import Script from 'next/script'; // Import Next.js Script component
 
 export default function Home() {
   return (
@@ -71,17 +72,27 @@ export default function Home() {
             },
           })}
         </script>
-        <script type="text/javascript">
-	atOptions = {
-		'key' : '98446bbcee889028dfaec65a250dc039',
-		'format' : 'iframe',
-		'height' : 600,
-		'width' : 160,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"></script>
       </Head>
+
+      {/* Ad Script (External JS) */}
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            atOptions = {
+              'key' : '98446bbcee889028dfaec65a250dc039',
+              'format' : 'iframe',
+              'height' : 600,
+              'width' : 160,
+              'params' : {}
+            };
+          `,
+        }}
+      />
+      <Script
+        src="//www.highperformanceformat.com/98446bbcee889028dfaec65a250dc039/invoke.js"
+        strategy="afterInteractive"
+      />
 
       {/* Page Content */}
       <Header />
