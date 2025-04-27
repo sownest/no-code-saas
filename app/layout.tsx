@@ -1,5 +1,3 @@
-
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -78,6 +76,12 @@ export default function RootLayout({
             content="WebLoom, web design, AI tools, productivity, no-code, SaaS, web development"
           />
           <meta name="author" content="WebLoom Team" />
+
+          {/* ✅ Google Site Verification Tag */}
+          <meta
+            name="google-site-verification"
+            content="Qte4WLs_77BK26KBwKx4SbPxQzWuBUwUHuBdi_u2uc0"
+          />
 
           {/* Open Graph (OG) Tags */}
           <meta property="og:title" content="WebLoom - Empowering Web Design and Productivity" />
