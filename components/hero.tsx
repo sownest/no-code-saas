@@ -6,7 +6,7 @@ import Link from "next/link";
 import Pricing from "./pricing";
 import AdBanner from 'AdBanner';
 import AdBannerRight from 'AdBannerRight';
-import HorizontalAdBanner from 'HorizontalAdBanner';
+
 
 export default function Hero() {
   const { isSignedIn } = useUser();
