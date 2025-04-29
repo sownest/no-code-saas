@@ -43,8 +43,7 @@ export default function Pricing() {
                     content="Explore WebLoom's affordable pricing plans. Choose between the Basic Plan and Pro Plan to unlock powerful AI tools and boost your productivity."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/pricing" />
-                <meta property="og:image" content="https://yourdomain.com/og-pricing-image.png" />
+
                 <meta property="og:site_name" content="WebLoom" />
 
                 {/* Twitter Card Tags */}
@@ -54,7 +53,6 @@ export default function Pricing() {
                     name="twitter:description"
                     content="Explore WebLoom's affordable pricing plans. Choose between the Basic Plan and Pro Plan to unlock powerful AI tools and boost your productivity."
                 />
-                <meta name="twitter:image" content="https://yourdomain.com/twitter-pricing-image.png" />
                 <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}

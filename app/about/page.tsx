@@ -27,8 +27,7 @@ export default function About() {
                     content="Learn about our mission, vision, and the passionate team behind No-Code SaaS. Discover how we empower individuals and businesses with cutting-edge AI-powered tools."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/about" />
-                <meta property="og:image" content="https://yourdomain.com/og-about-image.png" />
+
                 <meta property="og:site_name" content="No-Code SaaS" />
 
                 {/* Twitter Card Tags */}
@@ -38,7 +37,7 @@ export default function About() {
                     name="twitter:description"
                     content="Learn about our mission, vision, and the passionate team behind No-Code SaaS. Discover how we empower individuals and businesses with cutting-edge AI-powered tools."
                 />
-                <meta name="twitter:image" content="https://yourdomain.com/twitter-about-image.png" />
+
                 <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}

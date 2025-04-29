@@ -55,8 +55,6 @@ export default function Features() {
                     content="Explore the powerful features of WebLoom, including AI-powered summarization, export options, a user-friendly interface, and top-notch security."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/features" />
-                <meta property="og:image" content="https://yourdomain.com/og-features-image.png" />
                 <meta property="og:site_name" content="WebLoom" />
 
                 {/* Twitter Card Tags */}
@@ -66,7 +64,7 @@ export default function Features() {
                     name="twitter:description"
                     content="Explore the powerful features of WebLoom, including AI-powered summarization, export options, a user-friendly interface, and top-notch security."
                 />
-                <meta name="twitter:image" content="https://yourdomain.com/twitter-features-image.png" />
+
                 <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}

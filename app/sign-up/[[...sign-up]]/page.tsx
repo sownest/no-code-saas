@@ -27,8 +27,7 @@ export default function Page() {
                     content="Sign up for WebLoom to access powerful AI tools and boost your productivity. Join today and start transforming your workflow."
                 />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://yourdomain.com/sign-up" />
-                <meta property="og:image" content="https://yourdomain.com/og-sign-up-image.png" />
+
                 <meta property="og:site_name" content="WebLoom" />
 
                 {/* Twitter Card Tags */}
@@ -38,7 +37,7 @@ export default function Page() {
                     name="twitter:description"
                     content="Sign up for WebLoom to access powerful AI tools and boost your productivity. Join today and start transforming your workflow."
                 />
-                <meta name="twitter:image" content="https://yourdomain.com/twitter-sign-up-image.png" />
+
                 <meta name="twitter:site" content="@shray_sagar" />
 
                 {/* Canonical URL */}
