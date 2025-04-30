@@ -42,6 +42,8 @@ export default function Home() {
         />
         <meta name="twitter:image" content="https://yourdomain.com/twitter-home-image.png" />
         <meta name="twitter:site" content="@shray_sagar" />
+        <meta name="robots" content="index, follow" />
+
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://yourdomain.com" />

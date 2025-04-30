@@ -49,7 +49,7 @@ export default function Summarize() {
     if (isPDFMode && uploadedFiles.length === 0) {
       setError('Please upload at least one PDF file.');
       return;
-    }
+    } 
 
     setError(null);
     setLoading(true);

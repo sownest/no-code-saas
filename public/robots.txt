@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
+Disallow:
 
-Sitemap: https://webloomsai.vercel.app/sitemap.xml
+Sitemap: https://yourdomain.com/sitemap.xml
